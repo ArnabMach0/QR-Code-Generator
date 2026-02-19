@@ -1,49 +1,65 @@
 .qrcode-container {
   max-width: 1080px;
-  margin: 0 auto;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
 }
 
-.qrcode-container h2 {
-  font-size: 50px;
+.qrcode-title {
+  font-size: clamp(1.4rem, 2.2vw + 0.8rem, 2.5rem);
 }
 
-.qrcode-container .content {
-  display: flex;
-  gap: 50px;
-  justify-content: space-between;
-}
-
-.qrcode-container .control {
+.control {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.qrcode-container .qrcode-message {
-  flex: 1;
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  padding: 18px;
-  resize: none;
+.qrcode-message {
+  min-height: 220px;
+  resize: vertical;
 }
 
-.qrcode-container .generate-btn {
-  border: none;
-  border-radius: 25px;
-  padding: 25px 30px;
-  font-size: 27px;
-  background: #001219;
-  color: #fff;
-  cursor: pointer;
+.generate-btn {
+  min-height: 56px;
+  font-weight: 600;
 }
 
-@media (max-width: 1080px) {
-  .qrcode-container .content {
-    flex-direction: column;
-    max-width: 400px;
-    margin: 0 auto;
+.qrcode-wrapper {
+  width: 100%;
+  min-height: 320px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  background-color: var(--bs-body-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.qrcode {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrcode img,
+.qrcode canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991.98px) {
+  .qrcode-wrapper {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .qrcode-wrapper {
+    min-height: 240px;
+    padding: 0.75rem;
+  }
+
+  .qrcode-message {
+    min-height: 180px;
   }
 }
